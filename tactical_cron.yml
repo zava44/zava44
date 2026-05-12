@@ -1,0 +1,16 @@
+name: Tactical Alert Cron
+
+on:
+  schedule:
+    # Esegue ogni mattina alle 07:00 (ora UTC)
+    - cron: '0 7 * * *'
+  # Ti permette di testarlo subito premendo il tasto "Run workflow" su GitHub
+  workflow_dispatch:
+
+jobs:
+  ping_server:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Bussata al server Altervista
+        run: |
+          curl -s "https://tuosito.altervista.org/cron_telegram.php?key=SVEGLIA_TACTICAL_2026"
