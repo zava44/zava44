@@ -2,9 +2,8 @@ name: Tactical Alert Cron
 
 on:
   schedule:
-    # Esegue ogni mattina alle 07:00 (ora UTC)
-    - cron: '0 7 * * *'
-  # Ti permette di testarlo subito premendo il tasto "Run workflow" su GitHub
+    # 08:45 UTC corrisponde alle 10:45 italiane (con ora legale +2)
+    - cron: '45 8 * * *'
   workflow_dispatch:
 
 jobs:
